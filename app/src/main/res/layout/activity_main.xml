@@ -46,17 +46,16 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/edit_fname"
+                    android:id="@+id/edit_first_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="20dp"
                     android:hint="@string/first_name"
                     android:paddingLeft="10dp" />
 
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,15 +73,70 @@
                     android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/edit_lname"
+                    android:id="@+id/edit_last_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="20dp"
                     android:hint="@string/last_name"
                     android:paddingLeft="10dp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/father_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/father_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edit_father_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/father_name"
+                    android:paddingLeft="10dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mother_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/mother_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edit_mother_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/mother_name"
+                    android:paddingLeft="10dp" />
+
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -102,11 +156,11 @@
                     android:id="@+id/rd_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="65dp"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/rd_male"
+                        android:id="@+id/radio_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -114,7 +168,7 @@
                         android:textSize="15sp" />
 
                     <RadioButton
-                        android:id="@+id/rd_female"
+                        android:id="@+id/radio_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -145,7 +199,7 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/edit_locality"
+                        android:id="@+id/edit_locality_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="35dp"
@@ -154,7 +208,7 @@
                         android:paddingLeft="10dp" />
 
                     <EditText
-                        android:id="@+id/edit_house"
+                        android:id="@+id/edit_house_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="35dp"
@@ -192,6 +246,7 @@
                     android:textSize="20sp" />
 
                 <Spinner
+                    android:spinnerMode="dropdown"
                     android:id="@+id/spinner_state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

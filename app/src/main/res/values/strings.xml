@@ -3,6 +3,8 @@
     <string name="registration">Registration</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
+    <string name="father_name">Fathers Name</string>
+    <string name="mother_name">Mothers Name</string>
     <string name="address">Address</string>
     <string name="gender">Gender</string>
     <string name="contact">Contact</string>
@@ -22,6 +24,7 @@
     <string name="login">Login</string>
     <string name="registered">Already registered?</string>
     <string name="newuser">New User?</string>
+    <string name="user_info">User Information</string>
 
 
     <string-array name="countries_array">

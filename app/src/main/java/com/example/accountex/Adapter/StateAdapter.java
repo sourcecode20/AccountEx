@@ -9,16 +9,20 @@ import android.widget.TextView;
 
 import com.example.accountex.Model.StateRow;
 import com.example.accountex.R;
+import com.example.accountex.callback.SpinnerCallback;
 
 import java.util.List;
 
 public class StateAdapter extends BaseAdapter {
     List<StateRow> list;
     Context context;
+    SpinnerCallback spinnerCallback;
+    boolean flag = false;
 
-    public StateAdapter(Context context1, List<StateRow> list) {
-        context = context1;
+    public StateAdapter(Context context, List<StateRow> list, SpinnerCallback spinnerCallback) {
+        this.context = context;
         this.list = list;
+        this.spinnerCallback = spinnerCallback;
     }
 
     @Override
@@ -41,9 +45,20 @@ public class StateAdapter extends BaseAdapter {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row1 = inflater.inflate(R.layout.state_row, viewGroup, false);
-        TextView state = (TextView) row1.findViewById(R.id.state);
+        final TextView state = (TextView) row1.findViewById(R.id.state);
         StateRow temp = (StateRow) list.get(position);
         state.setText(temp.state);
+
+//        state.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(flag)
+//                  spinnerCallback.callback(state.getText().toString());
+//                else
+//                    flag = true;
+//            }
+//        });
+
         return row1;
     }
 }
