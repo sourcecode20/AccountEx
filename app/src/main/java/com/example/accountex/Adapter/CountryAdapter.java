@@ -17,9 +17,13 @@ public class CountryAdapter extends BaseAdapter {
     List<CountryRow> list;
     Context context;
 
-    public CountryAdapter(Context context1, List<CountryRow> list) {
+
+    boolean flag = false;
+
+    public CountryAdapter(Context context, List<CountryRow> list) {
         this.list = list;
-        context = context1;
+        this.context = context;
+
     }
 
     @Override
@@ -41,9 +45,10 @@ public class CountryAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.country_row, viewGroup, false);
-        TextView country = (TextView) row.findViewById(R.id.country);
+        final TextView country = (TextView) row.findViewById(R.id.country);
         CountryRow temp = (CountryRow) list.get(position);
         country.setText(temp.country);
+
 
         return row;
     }

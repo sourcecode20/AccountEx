@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue"
     android:orientation="vertical">
 
     <TextView
@@ -9,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="@string/user_info"
         android:textSize="30sp" />
 
@@ -36,7 +38,7 @@
                 android:id="@+id/get_first_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="70dp"
                 android:text="@string/first_name"
                 android:textColor="@color/blue"
                 android:textSize="20sp" />
@@ -63,7 +65,7 @@
                 android:id="@+id/get_last_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="70dp"
                 android:text="@string/last_name"
                 android:textColor="@color/blue"
                 android:textSize="20sp" />
@@ -89,7 +91,7 @@
                 android:id="@+id/get_father_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="40dp"
                 android:text="@string/father_name"
                 android:textColor="@color/blue"
                 android:textSize="20sp" />
@@ -144,7 +146,7 @@
                 android:id="@+id/get_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="100dp"
                 android:text="@string/gender"
                 android:textColor="@color/blue"
                 android:textSize="20sp" />
@@ -177,7 +179,7 @@
                     android:id="@+id/get_locality_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="85dp"
                     android:layout_marginEnd="30dp"
                     android:text="@string/locality"
                     android:textColor="@color/blue"
@@ -188,7 +190,7 @@
                     android:id="@+id/get_house_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="85dp"
                     android:layout_marginEnd="30dp"
                     android:text="@string/house_number"
                     android:textColor="@color/blue"
@@ -199,7 +201,7 @@
                     android:id="@+id/get_district"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="85dp"
                     android:layout_marginEnd="30dp"
                     android:text="@string/district"
                     android:paddingLeft="10dp"
@@ -230,7 +232,6 @@
 
                 android:id="@+id/get_state"
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginEnd="30dp"
@@ -246,7 +247,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/countries"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -291,6 +291,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="35dp"
+                    android:layout_marginStart="50dp"
                     android:text="@string/phone"
                     android:paddingLeft="15dp"
                     android:textColor="@color/blue"
@@ -302,6 +303,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="35dp"
+                    android:layout_marginStart="50dp"
                     android:text="@string/mobile"
                     android:textColor="@color/blue"
                     android:paddingLeft="15dp"

@@ -20,7 +20,6 @@ import com.example.accountex.Adapter.CountryAdapter;
 import com.example.accountex.Adapter.StateAdapter;
 import com.example.accountex.Model.CountryRow;
 import com.example.accountex.Model.StateRow;
-import com.example.accountex.callback.SpinnerCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +34,10 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rd_gender;
     RadioButton rd_male, rd_female;
     Spinner spinner_state, spinner_country;
-
-
     List<StateRow> data;
     List<CountryRow> data2;
 
-    String state;
+    String state,country;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +54,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 36; i++) {
             data.add(new StateRow(india_states[i]));
         }
-        spinner_state = findViewById(R.id.spinner_state);
-        spinner_state.setAdapter(new StateAdapter(this, data, new SpinnerCallback() {
-            @Override
-            public void callback(String selected) {
-                state = selected;
-                Toast.makeText(MainActivity.this, "" + state, Toast.LENGTH_SHORT).show();
-            }
-        }));
+        spinner_state.setAdapter(new StateAdapter(this, data));
 
         spinner_state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -73,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = linearLayout.findViewById(R.id.state);
                 state = textView.getText().toString();
                 Toast.makeText(MainActivity.this, "" + state, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -89,8 +80,29 @@ public class MainActivity extends AppCompatActivity {
         for (int i2 = 0; i2 < 240; i2++) {
             data2.add(new CountryRow(countries_array[i2]));
         }
+
+        spinner_country = findViewById(R.id.spinner_country);
+
         spinner_country = findViewById(R.id.spinner_country);
         spinner_country.setAdapter(new CountryAdapter(this, data2));
+
+        spinner_country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                RelativeLayout linearLayout = (RelativeLayout) spinner_country.getSelectedView();
+                TextView textView = linearLayout.findViewById(R.id.country);
+                country = textView.getText().toString();
+                Toast.makeText(MainActivity.this, "" + country, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
 
         login = (TextView) findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
@@ -114,9 +126,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                int selectedId = rd_gender.getCheckedRadioButtonId();
-//                RadioButton radioButton = (RadioButton) findViewById(selectedId);
-//                Toast.makeText(MainActivity.this, radioButton.getText(), Toast.LENGTH_SHORT).show();
+                int selectedId = rd_gender.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
 
                 Intent intent = new Intent(getApplicationContext(), UserInfo.class);
                 Bundle bundle = new Bundle();
@@ -130,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString("phone", edit_phone.getText().toString());
                 bundle.putString("mobile", edit_mobile.getText().toString());
                 bundle.putString("state", state);
-                bundle.putString("state", spinner_state.getOnItemSelectedListener().toString());
+                bundle.putString("gender", radioButton.getText().toString());
+                bundle.putString("country", country);
                 intent.putExtras(bundle);
                 startActivity(intent);
 

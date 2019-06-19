@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UserInfo extends AppCompatActivity {
 
-    TextView first_name, last_name, fathers_name, mothers_name, user_locality, user_house, user_district, user_phone, user_mobile;
-    Spinner spinner_state,spinner_country;
+    TextView gender,first_name, last_name, fathers_name, mothers_name, user_locality, user_house, user_district, user_phone, user_mobile,user_state,user_country;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,9 @@ public class UserInfo extends AppCompatActivity {
         user_district = (TextView) findViewById(R.id.get_district);
         user_phone = (TextView) findViewById(R.id.get_phone);
         user_mobile = (TextView) findViewById(R.id.get_mobile);
-        spinner_state=(Spinner)findViewById(R.id.spinner_state);
+        user_state=(TextView) findViewById(R.id.get_state);
+        user_country=(TextView)findViewById(R.id.get_country);
+        gender=(TextView)findViewById(R.id.get_gender);
 
         first_name.setText(bundle.getCharSequence("first_name"));
         last_name.setText(bundle.getCharSequence("last_name"));
@@ -39,8 +41,9 @@ public class UserInfo extends AppCompatActivity {
         user_district.setText(bundle.getCharSequence("district"));
         user_phone.setText(bundle.getCharSequence("phone"));
         user_mobile.setText(bundle.getCharSequence("mobile"));
-
-
+        user_state.setText(bundle.getCharSequence("state"));
+        user_country.setText(bundle.getCharSequence("country"));
+        gender.setText(bundle.getCharSequence("gender"));
 
 
 

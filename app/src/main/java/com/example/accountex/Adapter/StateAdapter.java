@@ -9,20 +9,17 @@ import android.widget.TextView;
 
 import com.example.accountex.Model.StateRow;
 import com.example.accountex.R;
-import com.example.accountex.callback.SpinnerCallback;
 
 import java.util.List;
 
 public class StateAdapter extends BaseAdapter {
     List<StateRow> list;
     Context context;
-    SpinnerCallback spinnerCallback;
     boolean flag = false;
 
-    public StateAdapter(Context context, List<StateRow> list, SpinnerCallback spinnerCallback) {
+    public StateAdapter(Context context, List<StateRow> list) {
         this.context = context;
         this.list = list;
-        this.spinnerCallback = spinnerCallback;
     }
 
     @Override
@@ -49,15 +46,6 @@ public class StateAdapter extends BaseAdapter {
         StateRow temp = (StateRow) list.get(position);
         state.setText(temp.state);
 
-//        state.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(flag)
-//                  spinnerCallback.callback(state.getText().toString());
-//                else
-//                    flag = true;
-//            }
-//        });
 
         return row1;
     }
